@@ -50,7 +50,7 @@ pip install -r requirements.txt
 ---
 
 ### **3️⃣ Install LabelImg for Dataset Annotation**
-Clone the LabelImg repository and install dependencies:
+Clone the LabelImg repository and install dependencies: [LabelImg](https://github.com/tzutalin/labelImg)
 ```bash
 git clone https://github.com/tzutalin/labelImg
 pip install pyqt5 lxml --upgrade
