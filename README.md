@@ -31,7 +31,94 @@
 
 ## 🚀 Installation & Usage  
 
-### 🔹 1. Clone the repository  
+### **1️⃣ Install PyTorch and CUDA**  
+- **Official PyTorch Installation Guide:** [PyTorch Install](https://pytorch.org/get-started/locally/)  
+- **CUDA Toolkit Download:** [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64)  
+- If you have a **GPU**, install **CUDA Toolkit** and then install the corresponding PyTorch version.  
+- If you **do not have a GPU**, install the CPU version of PyTorch.  
+
+---
+
+### **2️⃣ Install Ultralytics YOLOv5**  
+Clone the YOLOv5 repository and install dependencies:  
 ```bash
-git clone https://github.com/your-username/FocusDrive.git
-cd FocusDrive
+git clone https://github.com/ultralytics/yolov5
+cd yolov5
+pip install -r requirements.txt
+```
+
+---
+
+### **3️⃣ Install LabelImg for Dataset Annotation**
+Clone the LabelImg repository and install dependencies:
+```bash
+git clone https://github.com/tzutalin/labelImg
+pip install pyqt5 lxml --upgrade
+cd labelImg
+pyrcc5 -o libs/resources.py resources.qrc
+```
+
+---
+
+### **4️⃣ Label Dataset Using LabelImg**
+Open LabelImg and annotate images with bounding boxes.
+Save the labeled images inside:
+```kotlin
+data/
+├── images/
+├── labels/
+```
+
+---
+
+### **5️⃣ Define dataset.yaml File**
+Inside the yolov5 folder, create a dataset.yaml file with the following structure:
+```yaml
+# Dataset Configuration File
+path: ../data  # Root dataset directory
+train: images  # Training images (relative to 'path')
+val: images    # Validation images (relative to 'path')
+
+# Number of Classes
+nc: 17 
+
+# Class Names
+names: ['dog', 'person', 'cat', 'tv', 'car', 'meatballs', 'marinara sauce', 
+        'tomato soup', 'chicken noodle soup', 'french onion soup', 'chicken breast', 
+        'ribs', 'pulled pork', 'hamburger', 'cavity', 'awake', 'drowsy']
+```
+
+---
+
+### **6️⃣ Train YOLOv5 Model**
+Run the training script inside the yolov5 folder:
+```bash
+cd yolov5
+python train.py --img 320 --batch 16 --epochs 500 --data dataset.yaml --weights yolov5s.pt --workers 2
+```
+
+---
+
+### **7️⃣ Run the Application**
+After training, run the main application:
+```bash
+python app.py
+```
+
+---
+
+## 🎯 Features
+✅ Real-time driver drowsiness detection
+✅ Uses YOLOv5 for object detection
+✅ Audio alert system for drowsy drivers
+✅ Custom dataset labeling and training
+
+---
+
+## 📌 Dependencies
+- Python 3.8+
+- PyTorch
+- CUDA (for GPU acceleration)
+- OpenCV
+- Ultralytics YOLOv5
+- LabelImg
