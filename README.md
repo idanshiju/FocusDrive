@@ -108,10 +108,10 @@ python app.py
 ---
 
 ## 🎯 Features
-✅ Real-time driver drowsiness detection
-✅ Uses YOLOv5 for object detection
-✅ Audio alert system for drowsy drivers
-✅ Custom dataset labeling and training
+✅ Real-time driver drowsiness detection  
+✅ Uses YOLOv5 for object detection  
+✅ Audio alert system for drowsy drivers  
+✅ Custom dataset labeling and training  
 
 ---
 
