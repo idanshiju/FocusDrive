@@ -9,7 +9,7 @@
 ✅ **Audio alert** if drowsiness persists for **3 seconds**  
 ✅ **Logs session details** in a CSV file  
 ✅ **User-friendly UI** built with **Tkinter (customtkinter)**  
-✅ **Video processing** using **OpenCV**
+✅ **Video processing** using **OpenCV** 
 ✅ **Audio playback** with **VLC**  
 
 ---
