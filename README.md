@@ -40,7 +40,7 @@
 ---
 
 ### **2️⃣ Install Ultralytics YOLOv5**  
-Clone the YOLOv5 repository and install dependencies:  
+Clone the YOLOv5 repository and install dependencies:  [YOLOv5](https://github.com/ultralytics/yolov5)
 ```bash
 git clone https://github.com/ultralytics/yolov5
 cd yolov5
